@@ -17,7 +17,11 @@
 
 ### 🎓 開始學習 - 觀看互動式教學簡報
 
-本專案包含**完整的互動式教學簡報**（5 個章節、37+ 頁投影片）
+本專案包含**完整的互動式教學簡報**（5 個章節、31 頁投影片）
+
+**📺 線上觀看簡報：[https://chatgpt3a01.github.io/zeabur-n8n-linebot-guide/](https://chatgpt3a01.github.io/zeabur-n8n-linebot-guide/)**
+
+或在本地執行：
 
 ```bash
 # 克隆專案並啟動
@@ -249,6 +253,7 @@ pnpm install && pnpm dev
 
 **🏆 獲獎紀錄**
 
+🥇 2025年 STEAM臺北市專業教學講師認證<br>
 🥇 2024年 教育部人工智慧講師認證<br>
 🥇 2022、2023年 指導學生XR專題競賽特優<br>
 🥇 2022年 VR教材開發教師組特優<br>
