@@ -1,6 +1,7 @@
 import { SlideDeck } from "@/components/SlideDeck";
 import { Slide } from "@/components/Slide";
-import { Key, MessageSquare, ShieldCheck, ExternalLink, Copy, Eye, EyeOff, CheckCircle, AlertTriangle, Settings } from "lucide-react";
+import { Key, MessageSquare, ShieldCheck, ExternalLink, Copy, Eye, EyeOff, CheckCircle, AlertTriangle, Settings, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Part3() {
   const slides = [
@@ -752,9 +753,14 @@ export default function Part3() {
       </div>
 
       <div className="mt-6 bg-gradient-to-r from-[#06c755] to-[#00b900] text-white p-5 rounded-xl text-center">
-        <p className="text-[24px]">
+        <p className="text-[24px] mb-4">
           <strong>✅ Part 3 完成！</strong> LINE Bot 憑證已設定完成，接下來進入 Part 4 串接 n8n 和 LINE
         </p>
+        <Link href="/part/4">
+          <a className="inline-flex items-center gap-2 bg-white text-[#06c755] px-6 py-3 rounded-lg font-bold text-[22px] hover:bg-gray-100 transition-colors">
+            前往 Part 4：n8n 串接 LINE Bot <ArrowRight size={24} />
+          </a>
+        </Link>
       </div>
     </Slide>
   ];

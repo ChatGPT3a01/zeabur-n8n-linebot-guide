@@ -1,6 +1,7 @@
 import { SlideDeck } from "@/components/SlideDeck";
 import { Slide } from "@/components/Slide";
-import { CheckCircle, ExternalLink, Smartphone, Database, Server } from "lucide-react";
+import { CheckCircle, ExternalLink, Smartphone, Database, Server, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Part1() {
   const slides = [
@@ -363,9 +364,14 @@ export default function Part1() {
       </div>
 
       <div className="mt-6 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white p-5 rounded-xl text-center">
-        <p className="text-[24px]">
+        <p className="text-[24px] mb-4">
           <strong>✅ Part 1 完成！</strong> 接下來進入 Part 2，我們將開始部署 n8n 服務
         </p>
+        <Link href="/part/2">
+          <a className="inline-flex items-center gap-2 bg-white text-[#667eea] px-6 py-3 rounded-lg font-bold text-[22px] hover:bg-gray-100 transition-colors">
+            前往 Part 2：n8n 部署與初始化 <ArrowRight size={24} />
+          </a>
+        </Link>
       </div>
     </Slide>
   ];

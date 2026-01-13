@@ -1,6 +1,7 @@
 import { SlideDeck } from "@/components/SlideDeck";
 import { Slide } from "@/components/Slide";
-import { Download, Upload, Settings, Cloud, Rss, BarChart3, AlertCircle, CheckCircle2, Smartphone, Code, Database, Globe, Zap, FileJson, Play, Bug, Lightbulb } from "lucide-react";
+import { Download, Upload, Settings, Cloud, Rss, BarChart3, AlertCircle, CheckCircle2, Smartphone, Code, Database, Globe, Zap, FileJson, Play, Bug, Lightbulb, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Part5() {
   const slides = [
@@ -1405,6 +1406,17 @@ export default function Part5() {
         <div className="mt-8 text-[24px] text-[#666] max-w-[700px]">
           <p className="mb-2">💡 記得查看 n8n 官方文件探索更多可能性</p>
           <p>🤝 遇到問題？歡迎到 3A科技研究社發問！</p>
+        </div>
+
+        <div className="mt-6 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white p-5 rounded-xl text-center">
+          <p className="text-[24px] mb-4">
+            <strong>✅ Part 5 完成！</strong> 學會了 3 個實戰工作流模板
+          </p>
+          <Link href="/part/6">
+            <a className="inline-flex items-center gap-2 bg-white text-[#667eea] px-6 py-3 rounded-lg font-bold text-[22px] hover:bg-gray-100 transition-colors">
+              前往 Part 6 <ArrowRight size={24} />
+            </a>
+          </Link>
         </div>
       </div>
     </Slide>

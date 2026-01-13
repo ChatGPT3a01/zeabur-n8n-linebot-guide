@@ -1,6 +1,7 @@
 import { SlideDeck } from "@/components/SlideDeck";
 import { Slide } from "@/components/Slide";
-import { User, Globe, MousePointerClick, Rocket, Clock, CheckCircle, AlertTriangle, Package, Settings } from "lucide-react";
+import { User, Globe, MousePointerClick, Rocket, Clock, CheckCircle, AlertTriangle, Package, Settings, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Part2() {
   const slides = [
@@ -506,9 +507,14 @@ export default function Part2() {
       </div>
 
       <div className="mt-6 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white p-5 rounded-xl text-center">
-        <p className="text-[24px]">
+        <p className="text-[24px] mb-4">
           <strong>✅ Part 2 完成！</strong> n8n 已成功部署，接下來進入 Part 3 設定 LINE Bot
         </p>
+        <Link href="/part/3">
+          <a className="inline-flex items-center gap-2 bg-white text-[#667eea] px-6 py-3 rounded-lg font-bold text-[22px] hover:bg-gray-100 transition-colors">
+            前往 Part 3：LINE Developer 設定 <ArrowRight size={24} />
+          </a>
+        </Link>
       </div>
     </Slide>
   ];

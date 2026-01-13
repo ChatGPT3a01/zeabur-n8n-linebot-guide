@@ -1,6 +1,7 @@
 import { SlideDeck } from "@/components/SlideDeck";
 import { Slide } from "@/components/Slide";
-import { Shield, Zap, Bug, Database, Globe, Lock, TrendingUp, BookOpen, Lightbulb, AlertTriangle, CheckCircle2, Settings, Users, FileText, Github, ExternalLink, Target, Rocket } from "lucide-react";
+import { Shield, Zap, Bug, Database, Globe, Lock, TrendingUp, BookOpen, Lightbulb, AlertTriangle, CheckCircle2, Settings, Users, FileText, Github, ExternalLink, Target, Rocket, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Part6() {
   const slides = [
@@ -901,6 +902,17 @@ export default function Part6() {
 
         <div className="mt-8 text-[22px] text-[#999]">
           <p>© 2026 阿亮老師 | Made with ❤️</p>
+        </div>
+
+        <div className="mt-8 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white p-5 rounded-xl text-center">
+          <p className="text-[24px] mb-4">
+            <strong>✅ Part 6 完成！</strong> 恭喜完成所有課程！
+          </p>
+          <Link href="/">
+            <a className="inline-flex items-center gap-2 bg-white text-[#667eea] px-6 py-3 rounded-lg font-bold text-[22px] hover:bg-gray-100 transition-colors">
+              回到首頁 <ArrowRight size={24} />
+            </a>
+          </Link>
         </div>
       </div>
     </Slide>

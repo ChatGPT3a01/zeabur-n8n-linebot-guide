@@ -1,6 +1,7 @@
 import { SlideDeck } from "@/components/SlideDeck";
 import { Slide } from "@/components/Slide";
-import { Webhook, MessageSquare, PlayCircle, CheckCircle2, Copy, AlertTriangle, Bug, TestTube, RefreshCw, Send } from "lucide-react";
+import { Webhook, MessageSquare, PlayCircle, CheckCircle2, Copy, AlertTriangle, Bug, TestTube, RefreshCw, Send, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Part4() {
   const slides = [
@@ -1058,6 +1059,17 @@ export default function Part4() {
           <p className="text-[26px] text-green-800 font-bold">
             🎊 你已經完成基礎教學！準備好進入實戰應用了嗎？
           </p>
+        </div>
+
+        <div className="mt-6 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white p-5 rounded-xl text-center">
+          <p className="text-[24px] mb-4">
+            <strong>✅ Part 4 完成！</strong> 掌握了 n8n 和 LINE Bot 的基礎串接
+          </p>
+          <Link href="/part/5">
+            <a className="inline-flex items-center gap-2 bg-white text-[#667eea] px-6 py-3 rounded-lg font-bold text-[22px] hover:bg-gray-100 transition-colors">
+              前往 Part 5 <ArrowRight size={24} />
+            </a>
+          </Link>
         </div>
       </div>
     </Slide>
