@@ -10,6 +10,7 @@ import Part2 from "@/pages/Part2";
 import Part3 from "@/pages/Part3";
 import Part4 from "@/pages/Part4";
 import Part5 from "@/pages/Part5";
+import Part6 from "@/pages/Part6";
 import NotFound from "@/pages/NotFound";
 
 function AppRouter() {
@@ -22,6 +23,7 @@ function AppRouter() {
         <Route path="/part/3" component={Part3} />
         <Route path="/part/4" component={Part4} />
         <Route path="/part/5" component={Part5} />
+        <Route path="/part/6" component={Part6} />
         <Route component={NotFound} />
       </Switch>
     </Router>

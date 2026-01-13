@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Bot, Cloud, Server, Database, Code, BookOpen, Youtube, Facebook } from "lucide-react";
+import { Bot, Cloud, Server, Database, Code, BookOpen, Youtube, Facebook, Rocket } from "lucide-react";
 
 export default function Home() {
   return (
@@ -65,6 +65,12 @@ export default function Home() {
               number="Part 5"
               title="實戰案例與延伸應用"
               icon={<Database className="w-8 h-8 opacity-80" />}
+            />
+            <PartCard
+              to="/part/6"
+              number="Part 6"
+              title="進階技巧與最佳實踐"
+              icon={<Rocket className="w-8 h-8 opacity-80" />}
             />
           </div>
         </div>

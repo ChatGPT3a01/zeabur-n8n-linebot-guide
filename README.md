@@ -34,18 +34,6 @@
   <img src="https://img.shields.io/badge/🚀_立即開始學習-點擊觀看簡報-blue?style=for-the-badge&labelColor=667eea&color=764ba2" alt="立即開始學習" height="60">
 </a>
 
-<br>
-<br>
-
-**本專案包含完整的互動式教學簡報**
-
-📊 **5 個章節** | 📄 **超過 60 頁投影片** | ⏱️ **10 分鐘完成部署**
-
-<br>
-
-> ⚠️ **GitHub Pages 設定提醒**
-> 如果簡報網址顯示 404 錯誤，請先到儲存庫的 `Settings` → `Pages` → `Source` 選擇 `GitHub Actions`
-
 </div>
 
 <br>
