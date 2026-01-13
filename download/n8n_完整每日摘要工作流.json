@@ -1,0 +1,338 @@
+{
+  "name": "亮的~抱報",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1760,
+        800
+      ],
+      "id": "3a122750-fa96-403e-8fde-7a80b843fa35",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "mode": "list",
+          "value": "primary"
+        },
+        "limit": 10,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        2048,
+        592
+      ],
+      "id": "8ed7da5e-9213-4ada-9855-07fe2b1ed5d9",
+      "name": "Google日曆"
+    },
+    {
+      "parameters": {
+        "url": "https://technews.tw/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        2048,
+        992
+      ],
+      "id": "85a6a6bf-fc7c-444b-a7c9-114c35ddf3a6",
+      "name": "RSS Read"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "condition-1",
+              "leftValue": "={{ $json.categories }}",
+              "rightValue": "GPT-5",
+              "operator": {
+                "type": "array",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "condition-2",
+              "leftValue": "={{ $json.categories }}",
+              "rightValue": "AI",
+              "operator": {
+                "type": "array",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        2352,
+        992
+      ],
+      "id": "70ebc33f-5013-4ec0-81b0-e341fb5f532c",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2656,
+        992
+      ],
+      "id": "cd7c1b74-dd4d-402b-894e-5e8e45e19983",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        2960,
+        800
+      ],
+      "id": "f4fcdd8b-27da-4530-80c4-18c3f728242f",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "aggregate": "individualFields",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        3248,
+        800
+      ],
+      "id": "bb9735cf-a7df-4be2-8c01-b448f1f9d788",
+      "name": "資料統整"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=YOUR_GEMINI_API_KEY",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ contents: [{ role: 'user', parts: [{ text: '請根據我提供的資料，撰寫一篇「當日摘要」文章，並遵守以下規則：\\n\\n### 內容結構\\n輸出內容需包含兩個主要類別：\\n1. 今日行程\\n- 標明行程的「名稱」與「開始時間」，分成兩行顯示\\n- 每個行程以卡片式設計呈現，搭配相關 Emoji 提升趣味性\\n2. 今日文章\\n- 包含文章的「標題」（翻譯為繁體中文）與「連結」，分成兩行顯示\\n- 每篇文章標題前可加入適合的 Emoji，增加可讀性與社群感\\n\\n### 輸出格式與設計要求\\n- 使用 HTML 格式輸出，適合顯示在電子郵件內。\\n- 使用 CSS 美化，字體採用現代無襯線字體（如 Arial、Helvetica、sans-serif）。\\n- 排版需有適當留白與對齊，避免擁擠。\\n- 「今日行程」部分：採用卡片式設計，圓角邊框，卡片背景顏色可使用淡色系，並在行程名稱前加入表情符號\\n- 「今日文章」部分：以列表方式呈現，每篇文章前加適合的表情符號，文章標題與連結各分行顯示，連結需可點擊\\n- 整體需以社群貼文風格撰寫，語氣生動、富有情感，搭配 Emoji 突顯亮點\\n\\n### 額外注意\\n- 不要包含任何 HTML 頁首元素（如 <html>、<head>、<body>）\\n- 生成的 HTML 與 CSS 必須可直接貼入電子郵件編輯器\\n- Emoji 分佈需自然且與內容相關\\n\\n以下是今日資料：\\n\\n今日行程：\\n' + $json['行程'].join('\\n') + '\\n\\n今日文章：\\n' + $json['文章'].join('\\n') }] }] }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3552,
+        800
+      ],
+      "id": "3a6041a9-3416-4733-8f59-d14d3dc11a17",
+      "name": "Gemini AI",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "sendTo": "your-email@gmail.com",
+        "subject": "=亮的~抱報 {{ $('Google日期整理').item.json['行程'] }}",
+        "message": "={{ $json.candidates[0].content.parts[0].text }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        3856,
+        800
+      ],
+      "id": "de6ef9cc-a65f-412a-8c03-bc6f2794bd41",
+      "name": "送出信件",
+      "webhookId": "ed3fa0c9-8c46-46a7-aca5-b10b0f082909"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2656,
+        592
+      ],
+      "id": "ff47b9ec-b9a1-4a82-bce3-0ef17d4cbd5c",
+      "name": "Google日期整理"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2352,
+        592
+      ],
+      "id": "f89ca7d2-04e3-498f-b46f-a68e1476cc10",
+      "name": "資料清理"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Google日曆",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google日曆": {
+      "main": [
+        [
+          {
+            "node": "資料清理",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Read": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "資料統整",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "資料統整": {
+      "main": [
+        [
+          {
+            "node": "Gemini AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini AI": {
+      "main": [
+        [
+          {
+            "node": "送出信件",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google日期整理": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "資料清理": {
+      "main": [
+        [
+          {
+            "node": "Google日期整理",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "5692c2d0-91aa-401d-af57-7cf6e0b677a2",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d88bcfac160f8da836728b4baedd3032ef853b033257ed29712143b0c9cfd533"
+  },
+  "id": "e5CjUrzCfcDgz8n4",
+  "tags": []
+}

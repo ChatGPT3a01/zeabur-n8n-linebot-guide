@@ -1,0 +1,200 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "events": [
+          "message"
+        ]
+      },
+      "type": "@aotoki/n8n-nodes-line-messaging.lineMessagingTrigger",
+      "typeVersion": 1,
+      "position": [
+        1664,
+        256
+      ],
+      "id": "0e983b51-ace7-40cd-8303-287603cd2640",
+      "name": "Line Messaging Trigger",
+      "webhookId": "cf81de4f-2937-41bc-a9d8-046c20651b48",
+      "credentials": {
+        "lineMessagingApi": {
+          "id": "YhOoWLe4Fdzh7znr",
+          "name": "Line Messaging account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const userMessage = $json.message.text;\nconst replyToken = $json.replyToken;\n\nconst cityMap = {\n'台北': 'Taipei',\n'臺北': 'Taipei',\n'新北': 'New Taipei City',\n'桃園': 'Taoyuan',\n'台中': 'Taichung',\n'臺中': 'Taichung',\n'台南': 'Tainan',\n'臺南': 'Tainan',\n'高雄': 'Kaohsiung',\n'基隆': 'Keelung',\n'新竹': 'Hsinchu',\n'嘉義': 'Chiayi',\n'宜蘭': 'Yilan',\n'花蓮': 'Hualien',\n'台東': 'Taitung',\n'臺東': 'Taitung',\n'屏東': 'Pingtung',\n'南投': 'Nantou',\n'彰化': 'Changhua',\n'雲林': 'Yunlin',\n'苗栄': 'Miaoli',\n'澎湖': 'Penghu',\n'金門': 'Kinmen',\n'馬祖': 'Matsu'\n};\n\nlet cityName = 'Taipei';\nlet cityNameChinese = '台北';\n\nfor (const [chinese, english] of Object.entries(cityMap)) {\nif (userMessage.includes(chinese)) {\ncityName = english;\ncityNameChinese = chinese;\nbreak;\n}\n}\n\nreturn [{\njson: {\ncityName: cityName,\ncityNameChinese: cityNameChinese,\nuserMessage: userMessage,\nreplyToken: replyToken\n}\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1904,
+        256
+      ],
+      "id": "b1a2690f-af6a-47ed-b662-c8df4b26fbae",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=AIzaSyDiBCYKRZfyQTnfyZDgo8JcVdbVvZNmFKU",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({contents:[{role:\"user\",parts:[{text:\"使用者提問: \"+$('Code in JavaScript').item.json.userMessage+\"\\n\\n天氣資料:\\n溫度: \"+$('Get Weather').item.json.main.temp+\"°C\\n濕度: \"+$('Get Weather').item.json.main.humidity+\"%\\n風速: \"+$('Get Weather').item.json.wind.speed+\"m/s\\n天氣狀況: \"+$('Get Weather').item.json.weather[0].description+\"\\n\\n請用繁體中文提供友善的天氣回應和建議。\"}]}]}) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        2384,
+        256
+      ],
+      "id": "bed56963-77cd-4c77-9b65-b12749fd4711",
+      "name": "HTTP Request",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.line.me/v2/bot/message/reply",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer COev3dgVfeYJcveo+FGmGQPDkq//6VeCbwcqR1UtHahv1ACFc6b57WUdWXMrXwregtFF1AillK8LL3gMWnQ80CcE5yxzDa2LrqVGff7c7mjhShP+5IQ1Lcfg2UzUK3jl21vSdJkdw8LsEZ7lXzYYuAdB04t89/1O/w1cDnyilFU="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        2864,
+        256
+      ],
+      "id": "c444744f-0906-4b20-9422-e46a1a4e76eb",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 取得 replyToken\nconst replyToken = $('Code in JavaScript').item.json.replyToken;\n\n// 取得 Gemini 回答\nconst geminiText = $input.item.json.candidates[0].content.parts[0].text;\n\n// 回傳 LINE 格式的 JSON\nreturn [{\n  json: {\n    replyToken: replyToken,\n    messages: [\n      {\n        type: \"text\",\n        text: geminiText\n      }\n    ]\n  }\n}]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2624,
+        256
+      ],
+      "id": "0354934c-b914-4f68-b714-2bb00de675e6",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "cityName": "={{ $json.cityName }}",
+        "language": "zh_TW"
+      },
+      "type": "n8n-nodes-base.openWeatherMap",
+      "typeVersion": 1,
+      "position": [
+        2112,
+        256
+      ],
+      "id": "7cff38ed-6dc3-43fa-a3fd-c570025f305e",
+      "name": "Get Weather",
+      "credentials": {
+        "openWeatherMapApi": {
+          "id": "GrNV0V7Ltq5QvdB7",
+          "name": "OpenWeatherMap account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Line Messaging Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Get Weather",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Weather": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "5155c535-8492-4773-9d1c-40edd178dbc9",
+  "meta": {
+    "instanceId": "d88bcfac160f8da836728b4baedd3032ef853b033257ed29712143b0c9cfd533"
+  },
+  "id": "ikgUiVHRc8WHl8jx",
+  "tags": []
+}

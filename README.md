@@ -77,6 +77,42 @@
 
 ---
 
+## 📥 n8n 工作流模板下載
+
+為了讓你更快上手，我們準備了 **3 個實用的 n8n 工作流模板**，可以直接匯入使用！
+
+### 📋 模板清單
+
+| 模板名稱 | 功能說明 | 下載連結 |
+|---------|---------|---------|
+| 🌤️ **LINE 天氣查詢機器人** | 透過 LINE 查詢台灣各縣市即時天氣<br>包含：城市辨識、天氣 API 串接、自動回覆 | [📥 下載](https://raw.githubusercontent.com/ChatGPT3a01/zeabur-n8n-linebot-guide/master/download/n8n_問Line天氣模板.json) |
+| 📰 **RSS 爬蟲工作流** | 自動抓取網站 RSS 更新<br>包含：RSS 訂閱、資料過濾、定時執行 | [📥 下載](https://raw.githubusercontent.com/ChatGPT3a01/zeabur-n8n-linebot-guide/master/download/n8n_RSS爬蟲工作流.json) |
+| 📊 **每日摘要工作流** | 自動產生每日資訊摘要並推送<br>包含：多來源整合、內容彙整、定時推播 | [📥 下載](https://raw.githubusercontent.com/ChatGPT3a01/zeabur-n8n-linebot-guide/master/download/n8n_完整每日摘要工作流.json) |
+
+### 💡 如何使用模板？
+
+1. **下載 JSON 檔案**
+   - 點擊上方下載連結
+   - 儲存 `.json` 檔案到電腦
+
+2. **匯入到 n8n**
+   - 登入你的 n8n 管理介面
+   - 點擊右上角「...」→「Import from File」
+   - 選擇下載的 JSON 檔案
+   - 點擊「Import」完成匯入
+
+3. **設定憑證**
+   - 根據工作流需求設定相應的憑證
+   - 例如：LINE Messaging API、天氣 API 等
+
+4. **測試執行**
+   - 點擊「Execute Workflow」測試
+   - 確認運作正常後啟用（Active）
+
+> 💡 **提示**：這些模板是課程的延伸實作範例，建議完成 Part 1-3 後再使用！
+
+---
+
 ## ✨ 教學簡報特色
 
 - 🎨 **精美互動介面** - 卡片式設計，步驟清晰
