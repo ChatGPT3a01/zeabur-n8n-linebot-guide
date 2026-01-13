@@ -146,6 +146,8 @@ pnpm build
 pnpm preview
 ```
 
+> 📖 **部署指南**：查看 [DEPLOY.md](DEPLOY.md) 了解如何部署到 Netlify、Vercel 或 Zeabur
+
 ---
 
 ## 🏗️ 專案架構
