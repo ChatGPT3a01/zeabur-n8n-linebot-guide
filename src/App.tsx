@@ -15,7 +15,7 @@ import NotFound from "@/pages/NotFound";
 
 function AppRouter() {
   return (
-    <Router>
+    <Router base="/zeabur-n8n-linebot-guide">
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/part/1" component={Part1} />
