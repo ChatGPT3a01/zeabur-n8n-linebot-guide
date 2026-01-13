@@ -306,7 +306,7 @@ zeabur-n8n-linebot-guide/
 
 <br>
 
-[⬆️ 回到頂部](#-zeabur--n8n--line-bot-完整教學)
+[⬆️ 回到頂部](#zeabur--n8n--line-bot-完整教學)
 
 ---
 
