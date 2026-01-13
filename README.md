@@ -17,19 +17,9 @@
 
 ### 🎓 開始學習 - 觀看互動式教學簡報
 
-本專案包含**完整的互動式教學簡報**（5 個章節、31 頁投影片）
+本專案包含**完整的互動式教學簡報**（5 個章節、超過 60 頁投影片）
 
 **📺 線上觀看簡報：[https://chatgpt3a01.github.io/zeabur-n8n-linebot-guide/](https://chatgpt3a01.github.io/zeabur-n8n-linebot-guide/)**
-
-或在本地執行：
-
-```bash
-# 克隆專案並啟動
-git clone https://github.com/ChatGPT3a01/zeabur-n8n-linebot-guide.git
-cd zeabur-n8n-linebot-guide
-pnpm install && pnpm dev
-# 瀏覽器開啟 http://localhost:5173
-```
 
 </div>
 
