@@ -4,7 +4,11 @@
       "WebSearch",
       "Bash(copy \"D:\\\\提示詞模板\\\\作者資訊.png\" \"D:\\\\n8n自動化\\\\zeabur-n8n-linebot-guide\\\\作者資訊.png\")",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git push)"
     ]
   }
 }

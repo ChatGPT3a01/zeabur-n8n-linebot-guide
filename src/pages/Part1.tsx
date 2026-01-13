@@ -31,8 +31,8 @@ export default function Part1() {
           </h3>
           <p>
             打開 Zeabur 官方網站：
-            <a href="https://zeabur.com/" target="_blank" className="text-blue-600 hover:underline inline-flex items-center gap-1 ml-2">
-              https://zeabur.com/ <ExternalLink size={18} />
+            <a href="https://zeabur.com/referral?referralCode=3a01chatgpt" target="_blank" className="text-blue-600 hover:underline inline-flex items-center gap-1 ml-2">
+              https://zeabur.com/referral?referralCode=3a01chatgpt <ExternalLink size={18} />
             </a>
           </p>
         </div>

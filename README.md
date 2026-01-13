@@ -6,7 +6,7 @@
 
 [![License](https://img.shields.io/badge/License-教學專用-blue.svg)](https://github.com/ChatGPT3a01/zeabur-n8n-linebot-guide)
 [![GitHub](https://img.shields.io/github/stars/ChatGPT3a01/zeabur-n8n-linebot-guide?style=social)](https://github.com/ChatGPT3a01/zeabur-n8n-linebot-guide)
-[![Platform](https://img.shields.io/badge/Platform-Zeabur-brightgreen.svg)](https://zeabur.com)
+[![Platform](https://img.shields.io/badge/Platform-Zeabur-brightgreen.svg)](https://zeabur.com/referral?referralCode=3a01chatgpt)
 [![n8n](https://img.shields.io/badge/n8n-2.0-ff6d5a.svg)](https://n8n.io)
 [![LINE](https://img.shields.io/badge/LINE-Bot-00C300.svg)](https://developers.line.biz)
 [![React](https://img.shields.io/badge/React-19.2.0-61dafb.svg)](https://react.dev)
@@ -286,7 +286,7 @@ zeabur-n8n-linebot-guide/
 感謝以下開源專案與平台：
 
 - [n8n.io](https://n8n.io) - 開源工作流自動化平台
-- [Zeabur](https://zeabur.com) - 免費雲端部署服務
+- [Zeabur](https://zeabur.com/referral?referralCode=3a01chatgpt) - 免費雲端部署服務
 - [LINE Developers](https://developers.line.biz) - LINE Bot API
 - [React](https://react.dev) - 前端框架
 - [Tailwind CSS](https://tailwindcss.com) - CSS 框架
