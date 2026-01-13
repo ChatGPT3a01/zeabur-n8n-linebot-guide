@@ -19,172 +19,130 @@
 
 ## 📖 專案簡介
 
-這是一個**互動式教學簡報網站**,專為想學習**雲端自動化部署**與 **LINE Bot 開發**的學生設計。
+這是一個**互動式教學簡報**，手把手教你如何：
 
-透過本課程,你將學會:
+### 🎯 核心學習目標
 
-- ☁️ 使用 **Zeabur** 免費雲端平台部署服務
-- 🔄 掌握 **n8n** 視覺化自動化工作流設計
-- 💬 串接 **LINE Messaging API** 打造智慧機器人
-- 🛠️ 理解 Webhook、API 整合的實作原理
+1. **在 Zeabur 部署 n8n 自動化平台**
+   - 完全免費（每月 $5 額度）
+   - 不需信用卡即可開始
+   - 自動配置 PostgreSQL 資料庫
 
-> 🎯 **零基礎友善** | 完全免費 | 無需維護伺服器 | 極速部署
+2. **串接 LINE Bot 打造智慧對話機器人**
+   - 設定 LINE Messaging API
+   - 配置 Webhook 接收訊息
+   - 建立自動化回覆工作流
 
----
+3. **掌握 n8n 視覺化工作流設計**
+   - 拖拉式操作，無需寫程式
+   - 400+ 應用整合
+   - 實作真實自動化情境
 
-## ✨ 功能特點
-
-### 🎨 精美互動式簡報
-- 🖼️ 卡片式導航設計，直觀易懂
-- 📱 RWD 響應式佈局，手機電腦皆適用
-- 🌙 深色漸層主題，視覺舒適
-- ⚡ 流暢動畫效果，提升學習體驗
-
-### 📚 完整課程內容
-1. **Part 1** - Zeabur 註冊與環境準備
-2. **Part 2** - n8n 部署與初始化
-3. **Part 3** - LINE Developer 設定與憑證配置
-4. **Part 4** - n8n 串接 LINE Bot（即將推出）
-5. **Part 5** - 實戰案例與延伸應用（即將推出）
-
-### 🛠️ 技術亮點
-- ⚛️ React 19 + TypeScript
-- 🎨 Tailwind CSS 4 樣式框架
-- 🧩 Radix UI 無障礙組件庫
-- ⚡ Vite 極速建置工具
-- 🎭 Framer Motion 動畫庫
+> 🎯 **零基礎友善** | 完全免費 | 無需維護伺服器 | 10分鐘完成部署
 
 ---
 
-## 📋 課程大綱
+## 📚 課程內容
 
-### Part 1: Zeabur 註冊與環境準備
-- ✅ Zeabur 平台介紹
-- ✅ 帳號註冊與手機驗證
-- ✅ 控制台操作說明
-- ✅ 服務初始化與狀態檢查
+### Part 1: Zeabur 平台註冊
+- ✅ 前往 Zeabur 官網註冊（使用推薦碼 3a01chatgpt）
+- ✅ 綁定手機號碼（免費方案必要步驟）
+- ✅ 熟悉控制台操作介面
+- ✅ 了解免費方案額度與限制
 
-### Part 2: n8n 部署與初始化
-- ✅ 開啟 n8n 網頁介面
-- ✅ 設定管理員帳號
-- ✅ 認識 n8n 工作流畫布
+### Part 2: 一鍵部署 n8n
+- ✅ 在 Zeabur 建立新專案
+- ✅ 選擇 n8n 模板快速部署
+- ✅ 自動配置 PostgreSQL 資料庫
+- ✅ 設定 n8n 管理員帳號
+- ✅ 取得專屬的 n8n 網址
 
-### Part 3: LINE Developer 設定
-- ✅ LINE Developers Console 導覽
-- ✅ 建立 Messaging API Channel
-- ✅ 取得 Access Token 與 Channel Secret
+### Part 3: LINE Bot 設定
+- ✅ 在 LINE Developers Console 建立 Channel
+- ✅ 取得 Channel Access Token
+- ✅ 取得 Channel Secret
 - ✅ 在 n8n 中建立 LINE 憑證
 
-### Part 4: n8n 串接 LINE Bot (Coming Soon)
-- 🔜 設定 Webhook URL
+### Part 4: 串接與測試（即將推出）
+- 🔜 設定 n8n Webhook 接收 LINE 訊息
 - 🔜 建立自動回覆工作流
 - 🔜 測試訊息收發功能
+- 🔜 部署上線使用
 
-### Part 5: 實戰案例與延伸應用 (Coming Soon)
-- 🔜 整合 AI 語言模型
-- 🔜 連接外部資料庫
-- 🔜 進階自動化情境設計
+### Part 5: 實戰應用（即將推出）
+- 🔜 整合 AI 語言模型（ChatGPT/Claude）
+- 🔜 連接 Google Sheets 資料庫
+- 🔜 設計多種自動化情境
+- 🔜 進階工作流技巧
+
+---
+
+## ✨ 教學簡報特色
+
+- 🎨 **精美互動介面** - 卡片式設計，步驟清晰
+- 📱 **響應式佈局** - 手機電腦都能輕鬆學習
+- 🖼️ **圖文並茂** - 每個步驟都有詳細說明
+- ⚡ **流暢動畫** - 提升學習體驗
 
 ---
 
 ## 🎓 學習資源
 
-### 官方文件
-- [n8n 官方文件](https://docs.n8n.io/)
-- [LINE Messaging API 文件](https://developers.line.biz/en/docs/messaging-api/)
-- [Zeabur 部署指南](https://zeabur.com/docs)
+### 📖 官方文件
+- **[Zeabur 文件](https://zeabur.com/docs)** - 平台使用指南
+- **[n8n 官方文件](https://docs.n8n.io/)** - 工作流設計完整教學
+- **[LINE Messaging API](https://developers.line.biz/en/docs/messaging-api/)** - LINE Bot 開發文件
 
-### 相關技術
-- [React 官方教學](https://react.dev/learn)
-- [Tailwind CSS 文件](https://tailwindcss.com/docs)
-- [TypeScript 手冊](https://www.typescriptlang.org/docs/)
-
-### 推薦閱讀
-- [n8n Guide 2026: Features & Workflow Automation Deep Dive](https://hatchworks.com/blog/ai-agents/n8n-guide/)
-- [LINE Bot SDK Documentation](https://github.com/line/line-bot-sdk-python)
-- [Zeabur Pricing Guide](https://zeabur.com/pricing)
+### 🔗 延伸閱讀
+- [n8n 2026 深度指南](https://hatchworks.com/blog/ai-agents/n8n-guide/) - n8n 最新功能與 AI 整合
+- [Zeabur 免費方案說明](https://zeabur.com/pricing) - 了解免費額度與限制
+- [LINE Bot Webhook 設定](https://developers.line.biz/en/docs/messaging-api/receiving-messages/) - 進階 LINE Bot 開發
 
 ---
 
-## 🚀 快速開始
+## 💡 為什麼選擇 Zeabur + n8n？
 
-### 環境需求
-- Node.js 18+ 或 Bun
-- pnpm / npm / yarn（任一套件管理工具）
+### 🆓 Zeabur - 最適合學習的免費雲端平台
 
-### 本地開發
+**免費方案優勢：**
+- 💰 每月 **$5 免費額度**（足夠運行 n8n）
+- 💳 **不需信用卡**即可開始使用
+- ⚡ **一鍵部署** n8n 模板
+- 🔒 自動配置 **HTTPS** 安全連線
+- 🗄️ 內建 **PostgreSQL** 資料庫
+- 🚀 **極速部署**，5 分鐘完成
 
-```bash
-# 1. 克隆專案
-git clone https://github.com/ChatGPT3a01/zeabur-n8n-linebot-guide.git
-cd zeabur-n8n-linebot-guide
+**為什麼不選其他平台？**
+- ❌ Heroku: 已取消免費方案
+- ❌ AWS/GCP: 設定複雜，不適合初學者
+- ❌ 傳統 VPS: 需要維護伺服器
+- ✅ Zeabur: 簡單、免費、快速！
 
-# 2. 安裝依賴
-pnpm install
+### 🔄 n8n - 最強大的視覺化自動化平台
 
-# 3. 啟動開發伺服器
-pnpm dev
+**核心優勢：**
+- 🎨 **拖拉式操作** - 不需寫程式也能建立工作流
+- 🔌 **400+ 整合應用** - 連接各種服務（Google、Slack、Notion...）
+- 🤖 **AI 原生支援** - 內建 ChatGPT、Claude 等 AI 模型整合
+- 📊 **視覺化除錯** - 即時查看資料流轉過程
+- 🔓 **開源免費** - 自行部署，資料完全掌控
+- ⚡ **高效能** - 單實例可處理每秒 220 個工作流
 
-# 4. 在瀏覽器開啟 http://localhost:5173
-```
+**n8n 2.0 新功能：**
+- 🔐 更安全的執行環境
+- 🚀 更快的執行速度
+- 🤖 增強的 AI Agent 支援
+- 📈 更好的錯誤處理
 
-### 建置專案
+### 💬 LINE Bot - 台灣市佔率第一的聊天平台
 
-```bash
-# 建置生產版本
-pnpm build
-
-# 預覽建置結果
-pnpm preview
-```
-
----
-
-## 🏗️ 專案架構
-
-```
-zeabur-n8n-linebot-guide/
-├── src/
-│   ├── components/           # React 組件
-│   │   ├── ui/              # 可重用 UI 組件
-│   │   ├── Slide.tsx        # 簡報投影片組件
-│   │   ├── SlideDeck.tsx    # 投影片容器
-│   │   └── NavBar.tsx       # 導航列
-│   ├── pages/               # 頁面組件
-│   │   ├── Home.tsx         # 首頁
-│   │   ├── Part1.tsx        # 課程第一部分
-│   │   ├── Part2.tsx        # 課程第二部分
-│   │   └── Part3.tsx        # 課程第三部分
-│   ├── contexts/            # React Context
-│   ├── hooks/               # 自定義 Hooks
-│   └── lib/                 # 工具函數
-├── .screenshots/            # 專案截圖
-├── dist/                    # 建置輸出
-└── public/                  # 靜態資源
-```
-
----
-
-## 💡 為什麼選擇這個技術組合？
-
-### 🆓 Zeabur - 免費雲端部署
-- ✅ 每月 $5 免費額度
-- ✅ 不需信用卡即可開始
-- ✅ 一鍵部署，自動 HTTPS
-- ✅ 支援 PostgreSQL 資料庫
-
-### 🔄 n8n - 開源自動化平台
-- ✅ 超過 **400+** 整合應用
-- ✅ 視覺化工作流設計
-- ✅ 可自行部署，資料自主
-- ✅ 支援 AI 原生功能（2.0 系列）
-- ✅ 單實例可處理每秒 **220** 個工作流執行
-
-### 💬 LINE Bot - 最受歡迎的聊天機器人
-- ✅ 台灣用戶數超過 **2100 萬**
-- ✅ Messaging API 完整文件
-- ✅ 免費方案足夠個人/教學使用
-- ✅ 支援豐富的訊息類型
+**為什麼選擇 LINE？**
+- 👥 台灣用戶數超過 **2100 萬**
+- 📱 使用者最熟悉的介面
+- 📚 **完整的 API 文件**和開發者支援
+- 💰 **免費方案充足** - 每月 500 則免費推播
+- 🎨 支援豐富的訊息格式（圖片、按鈕、輪播...）
+- 🔔 主動推播功能
 
 ---
 
