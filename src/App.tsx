@@ -8,6 +8,8 @@ import Home from "@/pages/Home";
 import Part1 from "@/pages/Part1";
 import Part2 from "@/pages/Part2";
 import Part3 from "@/pages/Part3";
+import Part4 from "@/pages/Part4";
+import Part5 from "@/pages/Part5";
 import NotFound from "@/pages/NotFound";
 
 function AppRouter() {
@@ -18,6 +20,8 @@ function AppRouter() {
         <Route path="/part/1" component={Part1} />
         <Route path="/part/2" component={Part2} />
         <Route path="/part/3" component={Part3} />
+        <Route path="/part/4" component={Part4} />
+        <Route path="/part/5" component={Part5} />
         <Route component={NotFound} />
       </Switch>
     </Router>

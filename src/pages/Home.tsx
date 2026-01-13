@@ -54,19 +54,17 @@ export default function Home() {
               title="LINE Developer 設定" 
               icon={<Code className="w-8 h-8 opacity-80" />}
             />
-            <PartCard 
-              to="/part/3" 
-              number="Part 4" 
-              title="n8n 串接 LINE Bot" 
+            <PartCard
+              to="/part/4"
+              number="Part 4"
+              title="n8n 串接 LINE Bot"
               icon={<Bot className="w-8 h-8 opacity-80" />}
-              isLocked
             />
-             <PartCard 
-              to="/part/3" 
-              number="Part 5" 
-              title="實戰案例與延伸應用" 
+             <PartCard
+              to="/part/5"
+              number="Part 5"
+              title="實戰案例與延伸應用"
               icon={<Database className="w-8 h-8 opacity-80" />}
-              isLocked
             />
           </div>
         </div>
