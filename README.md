@@ -4,7 +4,8 @@
 
 ### 從零開始打造你的智慧對話機器人
 
-[![License](https://img.shields.io/badge/License-教學專用-blue.svg)](https://github.com)
+[![License](https://img.shields.io/badge/License-教學專用-blue.svg)](https://github.com/ChatGPT3a01/zeabur-n8n-linebot-guide)
+[![GitHub](https://img.shields.io/github/stars/ChatGPT3a01/zeabur-n8n-linebot-guide?style=social)](https://github.com/ChatGPT3a01/zeabur-n8n-linebot-guide)
 [![Platform](https://img.shields.io/badge/Platform-Zeabur-brightgreen.svg)](https://zeabur.com)
 [![n8n](https://img.shields.io/badge/n8n-2.0-ff6d5a.svg)](https://n8n.io)
 [![LINE](https://img.shields.io/badge/LINE-Bot-00C300.svg)](https://developers.line.biz)
@@ -123,7 +124,7 @@
 
 ```bash
 # 1. 克隆專案
-git clone <repository-url>
+git clone https://github.com/ChatGPT3a01/zeabur-n8n-linebot-guide.git
 cd zeabur-n8n-linebot-guide
 
 # 2. 安裝依賴
