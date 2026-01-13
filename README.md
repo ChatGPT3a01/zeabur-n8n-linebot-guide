@@ -42,6 +42,30 @@
 
 ---
 
+## 🎓 開始學習
+
+### 📺 觀看互動式教學簡報
+
+本專案包含**完整的互動式教學簡報**，請在本地運行以獲得最佳學習體驗：
+
+```bash
+# 1. 克隆專案
+git clone https://github.com/ChatGPT3a01/zeabur-n8n-linebot-guide.git
+cd zeabur-n8n-linebot-guide
+
+# 2. 安裝依賴
+pnpm install
+
+# 3. 啟動教學簡報
+pnpm dev
+
+# 4. 在瀏覽器開啟 http://localhost:5173
+```
+
+> 💡 **提示**：簡報包含 5 個完整章節（Part 1-5），共 37+ 頁精美投影片，涵蓋從註冊到實戰的完整流程！
+
+---
+
 ## 📚 課程內容
 
 ### Part 1: Zeabur 平台註冊
@@ -216,7 +240,7 @@
 
 ### 曾慶良 主任（阿亮老師）
 
-<img src="作者資訊.png" width="600" alt="作者資訊">
+<img src="https://raw.githubusercontent.com/ChatGPT3a01/zeabur-n8n-linebot-guide/master/%E4%BD%9C%E8%80%85%E8%B3%87%E8%A8%8A.png" width="600" alt="作者資訊">
 
 <br>
 
