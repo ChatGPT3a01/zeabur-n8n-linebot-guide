@@ -11,7 +11,7 @@
 [![LINE](https://img.shields.io/badge/LINE-Bot-00C300.svg)](https://developers.line.biz)
 [![React](https://img.shields.io/badge/React-19.2.0-61dafb.svg)](https://react.dev)
 
-<img src="https://raw.githubusercontent.com/ChatGPT3a01/zeabur-n8n-linebot-guide/master/.screenshots/bundle-preview-latest.png" alt="課程簡報預覽" width="800">
+### 📖 完整教學 | 實戰模板 | 零基礎友善
 
 </div>
 
